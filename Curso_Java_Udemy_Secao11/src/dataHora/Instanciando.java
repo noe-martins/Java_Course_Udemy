@@ -87,7 +87,7 @@ public class Instanciando {
 		 * OBS:
 		 * 	1) LEMBRANDO QUE A CLASSE LOCALDATE DEVOLVE COMO toString O FORMATO ISO 8601, POR ISSO NA IMPRESSÃO APARECE AO CONTRÁRIO
 		 */
-		LocalDate d07 = LocalDate.parse("23/11/1994", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		LocalDate d07 = LocalDate.parse("23/08/1994", DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		System.out.println("Instanciando uma Data personalizada (Dia/Mês/Ano)\n");
 		System.out.println("d07 = " + d07);
 		System.out.println("TIPO: " + d07.getClass());
@@ -116,6 +116,8 @@ public class Instanciando {
 		System.out.println("TIPO: " + d10.getClass());
 		System.out.println("------------------------------------------");
 		System.out.println("------------------------------------------");
+		
+		System.out.println(System.getProperty("java.version"));
 	}
 
 }
