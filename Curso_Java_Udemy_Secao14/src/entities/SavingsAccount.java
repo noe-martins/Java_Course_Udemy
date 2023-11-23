@@ -24,9 +24,10 @@ public class SavingsAccount extends Account{
 	
 	/*
 	 * FEITO A SOBREPOSIÇÃO DO MÉTODO "withDraw"
+	 * BOA PRÁTICA TORNAR OS MÉTODOS SOBREPOSTOS "final"
 	 */
 	@Override
-	public Boolean withDraw(Double amount) {
+	public final Boolean withDraw(Double amount) {
 		if (amount > getBalance()) {
 			return false;
 		} else {

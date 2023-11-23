@@ -29,9 +29,10 @@ public class BusinessAccount extends Account{
 	}
 	/*
 	 * FEITO A SOBREPOSIÇÃO DO MÉTODO "withDraw"
+	 * BOA PRÁTICA TORNAR OS MÉTODOS SOBREPOSTOS "final"
 	 */
 	@Override
-	public Boolean withDraw(Double amount) {
+	public final Boolean withDraw(Double amount) {
 		if (super.withDraw(amount)) {
 			setBalance(getBalance() - 2.0);
 		}
