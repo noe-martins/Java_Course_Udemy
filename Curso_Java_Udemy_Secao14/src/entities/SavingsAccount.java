@@ -22,6 +22,18 @@ public class SavingsAccount extends Account{
 		setBalance(getBalance() + (getBalance() * this.interesrRate));
 	}
 	
+	/*
+	 * FEITO A SOBREPOSIÇÃO DO MÉTODO "withDraw"
+	 */
+	@Override
+	public Boolean withDraw(Double amount) {
+		if (amount > getBalance()) {
+			return false;
+		} else {
+			setBalance(getBalance() - amount);
+			return true;
+		}
+	}
 	@Override
 	public String toString() {
 		return "SavingsAccount [interesrRate=" + interesrRate + ", toString()=" + super.toString() + "]";

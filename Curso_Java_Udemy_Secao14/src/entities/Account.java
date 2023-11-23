@@ -37,7 +37,7 @@ public class Account {
 		if (amount > this.balance) {
 			return false;
 		} else {
-			setBalance(this.balance - amount);
+			setBalance(this.balance - (amount + 5.0));
 			return true;
 		}
 	}

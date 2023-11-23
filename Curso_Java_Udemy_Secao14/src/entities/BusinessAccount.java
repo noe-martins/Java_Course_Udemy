@@ -27,6 +27,17 @@ public class BusinessAccount extends Account{
 			setBalance(getBalance() + (amount - 10.0));
 		}
 	}
+	/*
+	 * FEITO A SOBREPOSIÇÃO DO MÉTODO "withDraw"
+	 */
+	@Override
+	public Boolean withDraw(Double amount) {
+		if (super.withDraw(amount)) {
+			setBalance(getBalance() - 2.0);
+		}
+		return true;
+	}
+	
 	@Override
 	public String toString() {
 		return "BusinessAccount [loanLimit=" + loanLimit + ", toString()=" + super.toString() + "]";
