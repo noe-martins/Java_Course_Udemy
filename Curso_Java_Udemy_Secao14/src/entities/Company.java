@@ -4,7 +4,7 @@ public class Company extends TaxPayer {
 	private Integer numberOfEmployees;
 	
 	public Company() {
-		
+		super();
 	}
 	public Company(String name, Double anualIncome, Integer numberOfEmployees) {
 		super(name, anualIncome);

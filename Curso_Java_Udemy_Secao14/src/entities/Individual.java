@@ -5,7 +5,7 @@ public class Individual extends TaxPayer {
 	
 	
 	public Individual() {
-		
+		super();
 	}
 	public Individual(String name, Double anualIncome, Double healthExpenditures) {
 		super(name, anualIncome);
