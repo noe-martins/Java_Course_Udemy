@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import model.exceptions.DomainException;
+
 public class Reservation {
 	private Integer roomNumber;
 	private LocalDate checkIn;
@@ -12,7 +14,14 @@ public class Reservation {
 	public Reservation() {
 		
 	}
-	public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {
+	public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) throws DomainException{
+		/*
+		 * AQUI DÁ PARA LANÇAR A EXCEPTION NO CONSTRUTOR DA CLASSE
+		 * BOA PRÁTICA: COLOCAR AS EXCEPTIONS NO COMEÇO DO MÉTODO
+		 */
+		if(checkOut.isBefore(checkIn)) {
+			throw new DomainException("Check-out date must be after check-in date");
+		}
 		this.roomNumber = roomNumber;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
@@ -35,17 +44,20 @@ public class Reservation {
 		Duration daysDuration = Duration.between(this.checkIn.atStartOfDay(), this.checkOut.atStartOfDay());
 		return daysDuration.toDays();
 	}
-	public String updateDates(LocalDate checkIn, LocalDate checkOut) {
+	public void updateDates(LocalDate checkIn, LocalDate checkOut) throws DomainException {
 		LocalDate now = LocalDate.now();
+		/*
+		 * throw new --> LANÇA A EXCEÇÃO, PORÉM PRECISA SER TRATADA COM TRY...CATCH
+		 * throws DomainException --> NA ASSINATURA DO MÉTODO DIZ: "ESSE MÉTODO PODE LANÇAR UMA EXCEÇÃO QUE NÃO VAI SER TRATADA AQUI"
+		 */
 		if (checkIn.isBefore(now) || checkOut.isBefore(now)) {
-			return "Reservation dates for update must be future dates";
+			throw new DomainException("Reservation dates for update must be future dates");
 		}
 		if(checkOut.isBefore(checkIn)) {
-			return "Check-out date must be after check-in date";
+			throw new DomainException("Check-out date must be after check-in date");
 		}
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
-		return null;
 	}
 	
 	@Override
