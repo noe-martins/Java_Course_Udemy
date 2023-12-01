@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class ProgramModel_1 {
 
 	public static void main(String[] args) {
-		File file = new File("C:\\Users\\noex_\\git\\Java_Course_Udemy__POO\\Curso_Java_Udemy_Secao15\\assets");
+		long start = System.currentTimeMillis();
+		File file = new File("C:\\Users\\noex_\\git\\Java_Course_Udemy__POO\\Curso_Java_Udemy_Secao17\\assets\\Texto.txt");
 		//COLOCA "null" PARA ONDE O SCANNER ESTÁ APONTANDO
 		Scanner sc = null;
 		try {
@@ -25,6 +26,8 @@ public class ProgramModel_1 {
 				sc.close();
 			}
 		}
+		long elapsed = System.currentTimeMillis() - start;
+		System.out.printf("%.3f s\n", (elapsed / 1000d));
 
 	}
 
