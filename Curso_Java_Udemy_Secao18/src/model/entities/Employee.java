@@ -26,7 +26,7 @@ public class Employee implements Comparable<Employee>{
 	}
 	
 	/*
-	 * NESSE CASO FOI FEITO USANDO O MODELO PARA WRAPPERS, NO CASO O DOUBLE.
+	 * NESSE CASO FOI FEITO USANDO O MODELO PARA WRAPPERS, NO CASO O STRING.
 	 * O ALGORÍTIMO INTERNO DO JAVA FAZ TODAS AS COMPARAÇÕES DA LISTA
 	 * SEMPRE USA DOIS ATRIBUTOS PARA COMPARAR:
 	 * 		- O "this"
@@ -35,7 +35,7 @@ public class Employee implements Comparable<Employee>{
 	 */
 	@Override
 	public int compareTo(Employee others) {
-		return this.salary.compareTo(others.getSalary());
+		return this.name.compareTo(others.getName());
 	}
 	
 	
