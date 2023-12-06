@@ -26,21 +26,16 @@ public class Employee implements Comparable<Employee>{
 	}
 	
 	/*
-	 * NESSE CASO FOI FEITO USANDO O MODELO PARA TIPOS PRIMITIVOS, NO CASO O double.
+	 * NESSE CASO FOI FEITO USANDO O MODELO PARA WRAPPERS, NO CASO O DOUBLE.
 	 * O ALGORÍTIMO INTERNO DO JAVA FAZ TODAS AS COMPARAÇÕES DA LISTA
 	 * SEMPRE USA DOIS ATRIBUTOS PARA COMPARAR:
 	 * 		- O "this"
 	 * 		- O QUE SERÁ DADO NO PARÂMETRO DO MÉTODO
+	 * PELO FATO DE OS WRAPPERS JÁ TEREM IMPLEMENTADO EM SUAS CLASSES A INTERFACE Comparable, JÁ PODE USAR O MÉTODO compareTo DIRETAMENTE
 	 */
 	@Override
 	public int compareTo(Employee others) {
-		if (this.salary < others.getSalary()) {
-			return -1;
-		} else if(this.salary == others.getSalary()){
-			return 0;
-		} else {
-			return 1;
-		}
+		return this.salary.compareTo(others.getSalary());
 	}
 	
 	
