@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import model.service.PrintService;
 
+/*
+ * SOLUÇÃO:
+ * - REAPROVEITEI A CLASSE PrintService PARA DIFERENTE TIPOS
+ */
+
 public class ProgramPrint {
 
 	public static void main(String[] args) {
@@ -12,13 +17,27 @@ public class ProgramPrint {
 		System.out.print("How many values: ");
 		int manyValues = sc.nextInt();
 		
-		PrintService ps = new PrintService();
+		//FALEI QUE ESSE OBJETO VAI SER DO TIPO "Integer"
+		System.out.println("Numbers: ");
+		PrintService<Integer> psInteger = new PrintService<>();
 		for (int i = 0; i < manyValues; i++) {
-			ps.addValue(sc.nextInt());
+			psInteger.addValue(sc.nextInt());
 		}
 		
-		ps.print();
-		System.out.println("First: " + ps.first());
+		System.out.println("Names: ");
+		sc.nextLine();//TIRANDO O BUFFER
+		PrintService<String> psString = new PrintService<>();
+		for (int i = 0; i < manyValues; i++) {
+			psString.addValue(sc.nextLine());
+		}
+		
+		System.out.println("Numbers");
+		psInteger.print();
+		System.out.println("First: " + psInteger.first());
+		
+		System.out.println("\nNames");
+		psString.print();
+		System.out.println("First: " + psString.first());
 		
 		sc.close();
 
