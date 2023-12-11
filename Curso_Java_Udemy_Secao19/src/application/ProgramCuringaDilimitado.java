@@ -16,16 +16,21 @@ public class ProgramCuringaDilimitado {
 		myShapes.add(new Circle(Color.WHITE, 4.0));
 		System.out.println("Total area: " + totalArea(myShapes));
 		
+		List<Circle> myCircles = new ArrayList<Circle>();
+		myCircles.add(new Circle(Color.BLACK, 2.0));
+		myCircles.add(new Circle(Color.BLACK, 4.0));
+		System.out.println("Total area: " + totalArea(myCircles));
+		
 	}
-	public static Double totalArea(List<Shape> list) {
+	/*
+	 * (List<? extends Shape> list), LÊ-SE: ESSE MÉTODO RECEBE COMO PARÂMETRO UMA List DE QUALQUER TIPO QUE INCLUSIVE PODE SER QUALQUER 
+	 * SUBTIPO DA CLASSE Shape.
+	 */
+	public static Double totalArea(List<? extends Shape> list) {
 		double sum = 0.0;
 		for (Shape s : list) {
 			sum += s.area();
 		}
 		return sum;
 	}
-	/*
-	 * PROBLEMA: SE FOR CRIAR UMA List<Circle>, NÃO VAI DÁ PRA USAR O "totalArea()", POIS Circle PODE SER UM SUBTIPO DE Shape, 
-	 * MAS List<Circle> NÃO É UM SUBTIPO DE List<Shape>.
-	 */
 }
