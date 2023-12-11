@@ -1,27 +1,31 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProgramGetPut {
 
 	public static void main(String[] args) {
+		List<Integer> myInts = Arrays.asList(1, 2, 3, 4);
+		List<Double> myDoubles = Arrays.asList(3.14, 6.28);
 		List<Object> myObjs = new ArrayList<Object>();
-		myObjs.add("Maria");
-		myObjs.add("João");
 		
-		List<? super Number> myNums = myObjs;
+		copy(myInts, myObjs);
+		System.out.println(myObjs);
 		
-		myNums.add(10);
-		myNums.add(35);
+		copy(myDoubles, myObjs);
+		System.out.println(myObjs);
 		
-		System.out.println(myNums);
-		
-		/*
-		 * NÃO PODE ATRIBUIR PARA A VARIÁVEL x DO TIPO Number PORQUE A List myNums PODE SER DE OUTROS TIPOS ACIMA DE Number.
-		 * QUE NO CASO É, POIS É DO TIPO String O PRIMEIRO ELEMENTO.
-		 */
-		//Number x = myNums.get(0);
 	}
-
+	/*
+	 * List<? extends Number> source --> É UM CASO DE COVARIÂNCIA (POSSO ACESSAR OS VALORES [FEITO ISSO NO FOR])
+	 * List<? super Number> destiny --> É UM CASO DE CONTRAVARIÂNCIA (POSSO ADICIONAR VALORES
+	 */
+	public static void copy(List<? extends Number> source, List<? super Number> destiny) {
+		for (Number numbers : source) {
+			destiny.add(numbers);
+		}
+	}
+	
 }
