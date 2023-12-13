@@ -1,7 +1,7 @@
 package application;
 
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ProgramSet {
 
@@ -9,12 +9,12 @@ public class ProgramSet {
 		/*
 		 * RESULTADO NO CONSOLE: 
 		 * true
-			Noé
 			Joana
 			Maria
-		 * HashSet<>() --> NÃO LEVA EM CONTA A ORDENAÇÃO DA LISTA
+			Noé
+		 * TreeSet<>() --> MANTÉM OS DADOS ORDENADOS
 		 */
-		Set<String> set = new HashSet<>();
+		Set<String> set = new TreeSet<>();
 		set.add("Maria");
 		set.add("Noé");
 		set.add("Joana");
