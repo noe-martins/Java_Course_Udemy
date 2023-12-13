@@ -12,7 +12,7 @@ public class ProgramSet {
 			Joana
 			Maria
 			Noé
-		 * TreeSet<>() --> MANTÉM A ORDEM EM QUE OS DADOS FORAM INSERIDOS
+		 * LinkedHashSet<>() --> MANTÉM A ORDEM EM QUE OS DADOS FORAM INSERIDOS
 		 */
 		Set<String> set = new LinkedHashSet<>();
 		set.add("Maria");
