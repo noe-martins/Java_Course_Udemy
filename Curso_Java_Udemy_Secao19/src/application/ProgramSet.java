@@ -7,11 +7,6 @@ public class ProgramSet {
 
 	public static void main(String[] args) {
 		/*
-		 * RESULTADO NO CONSOLE: 
-		 * true
-			Joana
-			Maria
-			Noé
 		 * LinkedHashSet<>() --> MANTÉM A ORDEM EM QUE OS DADOS FORAM INSERIDOS
 		 */
 		Set<String> set = new LinkedHashSet<>();
@@ -19,8 +14,16 @@ public class ProgramSet {
 		set.add("Noé");
 		set.add("Joana");
 		
-		System.out.println(set.contains("Noé"));
+		//REMOVER ITEM
+		set.remove("Maria");
+		
+		for (String sets : set) {
+			System.out.println(sets);
+		}
+		
+		//REMOVER ITEM COM UM PREDICADO (CONDIÇÃO)
 		System.out.println();
+		set.removeIf(x -> x.length() > 3); //TAMANHO DA String MAIOR QUE 3 CARACTERES
 		
 		for (String sets : set) {
 			System.out.println(sets);
