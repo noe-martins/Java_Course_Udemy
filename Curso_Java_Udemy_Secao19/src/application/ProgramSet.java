@@ -1,7 +1,7 @@
 package application;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class ProgramSet {
 
@@ -12,9 +12,9 @@ public class ProgramSet {
 			Joana
 			Maria
 			Noé
-		 * TreeSet<>() --> MANTÉM OS DADOS ORDENADOS
+		 * TreeSet<>() --> MANTÉM A ORDEM EM QUE OS DADOS FORAM INSERIDOS
 		 */
-		Set<String> set = new TreeSet<>();
+		Set<String> set = new LinkedHashSet<>();
 		set.add("Maria");
 		set.add("Noé");
 		set.add("Joana");
