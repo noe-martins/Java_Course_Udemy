@@ -4,6 +4,12 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Classe de aplicação que cadastra o código de alunos em três turmas (A,B e C)
+ * e mostra quantos alunos distintos tem no total.
+ * 
+ * @author noe.martins
+ */
 public class ProgramExF {
 	private static Scanner leitor;
 	
@@ -24,6 +30,11 @@ public class ProgramExF {
 		System.out.print(label);
 		return leitor.nextLine();
 	}
+	/**
+	 * 
+	 * @param classes, que contém o nome da turma
+	 * @param studentsCode, que contém a lista de códigos de cada estudante
+	 */
 	private static void addManyStudents(String classes, Set<Integer> studentsCode) {
 		int manyStudents = Integer.parseInt(textInput("How many students for course " + classes + "?"));
 		for (int i = 0; i < manyStudents; i++) {
