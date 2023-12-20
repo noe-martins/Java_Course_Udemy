@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import entities.Product;
@@ -15,10 +16,19 @@ public class ProgramComparator {
 		list.add(new Product("Tablet", 450.00));
 		
 		/**
-		 * O "sort()" USA COMO PARÂMETRO UM Comparator<T>
-		 * NESSE CASO FOI CRIADO UMA CLASSE QUE IMPLEMENTA ESSA INTERFACE E INSTANCIADO DIRETAMENTE NO PARÂMETRO
+		 * AQUI NÃO FOI INSTANCIADO UMA INTERFACE, MAS A CRIAÇÃO DE UMA SUBCLASSE ANÔNIMA QUE IMPLEMENTA
+		 * A INTERFACE Comparator<Product>.
+		 * É O MESMO EXEMPLO DO "MyComparator" SÓ QUE FEITO COM "CLASSE ANÔNIMA"
 		 */
-		list.sort(new MyComparator());
+		
+		Comparator<Product> comp = new Comparator<Product>() {
+			@Override
+			public int compare(Product p1, Product p2) {
+				return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+			}
+		};
+		
+		list.sort(comp);
 		
 		for (Product p : list) {
 			System.out.println(p);
