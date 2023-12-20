@@ -16,19 +16,16 @@ public class ProgramComparator {
 		list.add(new Product("Tablet", 450.00));
 		
 		/**
-		 * AQUI NÃO FOI INSTANCIADO UMA INTERFACE, MAS A CRIAÇÃO DE UMA SUBCLASSE ANÔNIMA QUE IMPLEMENTA
-		 * A INTERFACE Comparator<Product>.
-		 * É O MESMO EXEMPLO DO "MyComparator" SÓ QUE FEITO COM "CLASSE ANÔNIMA"
+		 * MESMO CASO DE IMPLEMENTAÇÃO ATRAVÉS DE CLASSE ANÔNIMA SÓ QUE INSTANCIANDO A SUBCLASSE
+		 * JÁ DENTRO DO PARÂMETRO DO sort()
 		 */
 		
-		Comparator<Product> comp = new Comparator<Product>() {
+		list.sort(new Comparator<Product>() {
 			@Override
 			public int compare(Product p1, Product p2) {
 				return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 			}
-		};
-		
-		list.sort(comp);
+		});
 		
 		for (Product p : list) {
 			System.out.println(p);
