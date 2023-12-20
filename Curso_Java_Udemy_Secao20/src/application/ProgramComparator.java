@@ -16,19 +16,11 @@ public class ProgramComparator {
 		list.add(new Product("Tablet", 450.00));
 		
 		/**
-		 * LÊ-SE: p1 E p2 LEVANDO A UMA IMPLEMENTAÇÃO DE FUNÇÃO.
-		 * ISSO É UMA FUNÇÃO LAMBDA.
-		 * (p1, p2) --> SÃO OS PARÂMETROS DA FUNÇÃO.
-		 * ->, INDICANDO O QUE SERÁ IMPLEMENTADO NO CORPO DA FUNÇÃO DADA POR ENTRE {};
+		 * MESMO CASO DO LAMBDA 1, PORÉM AINDA MAIS CLEAN.
 		 * 
-		 * OBS:
-		 * 1) NÃO PRECISOU ESPECIFICAR O TIPO DE p1 E p2. O COMPILADOR JÁ INTERPRETA QUE É DO TIPO PASSADO NO Comparator<Product>
-		 * 2) MAIS UM VEZ: NÃO ESTÁ SENDO INSTACIADO UMA INTERFACE, MAS SIM A CRIAÇÃO DE UMA CLASSE ANÔNIMA COM O USO DE FUNÇÃO LAMBDA
 		 */
 		
-		Comparator<Product> comp = (p1, p2) -> {
-			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-		};
+		Comparator<Product> comp = (p1, p2) ->  p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		
 		list.sort(comp);
 		
