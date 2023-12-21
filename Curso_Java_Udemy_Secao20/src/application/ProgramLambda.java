@@ -1,5 +1,6 @@
 package application;
 
+@FunctionalInterface
 interface Rectangle{
 	Double area(double weight, double height); //ÚNICO MÉTODO ABSTRATO
 }
