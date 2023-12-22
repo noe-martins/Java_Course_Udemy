@@ -30,4 +30,10 @@ public class Aluno extends Pessoa{
 		return (this.notaSemestreA + this.notaSemestreB)/2;
 	}
 
+	@Override
+	public String toString() {
+		return "Aluno [notaSemestreA=" + notaSemestreA + ", notaSemestreB=" + notaSemestreB + "]";
+	}
+
+
 }
