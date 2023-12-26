@@ -27,6 +27,14 @@ public class Product {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+	
+	/*
+	 * MÉTODO ESTÁTICO PRECISA DE UM PARÂMETRO ESPECIFICANDO QUAL O OBJETO.
+	 * ISSO PORQUE RODARÁ NO 'DATA' DA MEMÓRIA.
+	 */
+	public static boolean staticproductPredicate(Product p) {
+		return p.getPrice() >= 100.00;
+	}
 
 	@Override
 	public String toString() {

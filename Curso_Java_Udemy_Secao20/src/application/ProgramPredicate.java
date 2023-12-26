@@ -19,11 +19,11 @@ public class ProgramPredicate {
 		list.add(new Product("HD Case", 80.90));
 		
 		/*
-		 * .removeIf --> RECEBE COMO PARÂMETRO UM Predicate<T>.
-		 * COMO A CLASSE ProductPredicate() IMPLEMENTA O Predicate<T>, ELA É ACEITA NO PARÂMETRO.
-		 * E COM ISSO IRÁ REMOVER OS OBJETOS QUE SATISFAZEM O MÉTODO test() DO Predicate<T>
+		 * Method Reference --> REFERÊNCIA PARA MÉTODO.
+		 * ISSO É ACEITO NO SISTEMA LAMBDA DO JAVA.
+		 * (CLASSE)::(MÉTODO DA CLASSE)
 		 */
-		list.removeIf(new ProductPredicate());
+		list.removeIf(Product::staticproductPredicate);
 		
 		for (Product product : list) {
 			System.out.println(product);
