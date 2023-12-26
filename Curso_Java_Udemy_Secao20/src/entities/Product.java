@@ -29,11 +29,11 @@ public class Product {
 	}
 	
 	/*
-	 * MÉTODO ESTÁTICO PRECISA DE UM PARÂMETRO ESPECIFICANDO QUAL O OBJETO.
-	 * ISSO PORQUE RODARÁ NO 'DATA' DA MEMÓRIA.
+	 * COMO O MÉTODO AGORA NÃO É ESTÁTICO, IRÁ USAR OS ATRIBUTOS DO PRÓPRIO OBJETO.
+	 * ISSO PORQUE AGORA O MÉTODO RODARÁ NO 'HEAP' DA MEMÓRIA
 	 */
-	public static boolean staticproductPredicate(Product p) {
-		return p.getPrice() >= 100.00;
+	public boolean nonStaticProductPredicate() {
+		return this.price >= 100.00;
 	}
 
 	@Override

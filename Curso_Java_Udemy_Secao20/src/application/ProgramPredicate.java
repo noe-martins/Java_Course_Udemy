@@ -22,8 +22,9 @@ public class ProgramPredicate {
 		 * Method Reference --> REFERÊNCIA PARA MÉTODO.
 		 * ISSO É ACEITO NO SISTEMA LAMBDA DO JAVA.
 		 * (CLASSE)::(MÉTODO DA CLASSE)
+		 * ACEITA TAMBÉM MÉTODOS NÃO ESTÁTICOS
 		 */
-		list.removeIf(Product::staticproductPredicate);
+		list.removeIf(Product::nonStaticProductPredicate);
 		
 		for (Product product : list) {
 			System.out.println(product);
