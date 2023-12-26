@@ -3,9 +3,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class ProgramPredicate {
 
@@ -19,12 +19,13 @@ public class ProgramPredicate {
 		list.add(new Product("HD Case", 80.90));
 		
 		/*
-		 * Method Reference --> REFERÊNCIA PARA MÉTODO.
-		 * ISSO É ACEITO NO SISTEMA LAMBDA DO JAVA.
-		 * (CLASSE)::(MÉTODO DA CLASSE)
-		 * ACEITA TAMBÉM MÉTODOS NÃO ESTÁTICOS
+		 * LÊ-SE:
+		 * ESSE Predicate IRÁ RECEBER UMA FUNÇÃO ANÔNIMA QUE RECEBE COMO ARGUMENTO UM OBJETO Product
+		 * QUE RETORNARÁ UM boolean BASEADO NO PREÇO MAIOR QUE A VARIÁVEL "min"
 		 */
-		list.removeIf(Product::nonStaticProductPredicate);
+		double min = 100.00;
+		Predicate<Product> prod = p -> p.getPrice() >= min;
+		list.removeIf(prod);
 		
 		for (Product product : list) {
 			System.out.println(product);
