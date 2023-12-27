@@ -17,7 +17,7 @@ public class ProgramConsumer {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
-		list.forEach(Product::staticProductConsumer);
+		list.forEach(Product::nonStaticProductConsumer);
 		
 		list.forEach(System.out::println);
 	}
