@@ -35,6 +35,10 @@ public class Product {
 	public boolean nonStaticProductPredicate() {
 		return this.price >= 100.00;
 	}
+	
+	public static void staticProductConsumer(Product p) {
+		p.setPrice(p.getPrice() * 1.1);
+	}
 
 	@Override
 	public String toString() {
