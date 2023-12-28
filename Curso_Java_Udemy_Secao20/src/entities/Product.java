@@ -43,6 +43,10 @@ public class Product {
 	public void nonStaticProductConsumer() {
 		this.price *= 1.1;
 	}
+	
+	public static String staticProductFunction(Product p) {
+		return p.getName().toUpperCase();
+	}
 
 	@Override
 	public String toString() {
