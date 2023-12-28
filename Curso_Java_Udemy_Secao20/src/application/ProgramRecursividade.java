@@ -20,7 +20,7 @@ public class ProgramRecursividade {
 		
 		ProductService productSelection = new ProductService();
 		
-		System.out.println("Sum = " + productSelection.filterSum(list));
+		System.out.println("Sum = " + productSelection.filterSum(list, p -> p.getName().charAt(0) == 'T'));
 	}
 
 }
