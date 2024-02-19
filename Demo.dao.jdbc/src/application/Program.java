@@ -40,7 +40,11 @@ public class Program {
 		seller = sellerDao.findById(1); //PEGA OS DADOS QUE TEM O ID 1
 		seller.setName("Rute Ester"); //MODIFICA O CAMPO DESEJADO
 		sellerDao.update(seller); //ATUALIZA NO OBJETO E NO BD
+		System.out.println("Updated");
 		
+		System.out.println("\n=== TESTE 5: delete ===");
+		sellerDao.deleteById(6);
+		System.out.println("Deleted!");
 	}
 
 }
