@@ -1,5 +1,6 @@
 package model.dao;
 
+import db.DB;
 import model.dao.impl.SellerDaoJDBC;
 
 /**
@@ -8,7 +9,8 @@ import model.dao.impl.SellerDaoJDBC;
 public class DaoFactory {
 	
 	public static SellerDao createSellerDao() {
-		return new SellerDaoJDBC();
+		// COM O CONSTRUTOR NA "SellerDaoJDBC" EXIGINDO UM "conn", ENTÃO PASSA A ABERTURA DA CONEXÃO
+		return new SellerDaoJDBC(DB.openConnection());
 	}
 	
 }
