@@ -3,9 +3,20 @@ package com.educandoweb.Curso_Java_Udemy_Secao23.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity //ESPECIFICA PARA O JPA QUE OS OBJETOS DESSA CLASSE DEVERÃO SER CONVERTIDOS PARA O MODELO RELACIONAL
+@Table(name = "tb_user") //ESPECIFICA O NOME DA TABELA QUE SERÁ GERADO
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	//MOSTRE QUE ATRIBUTO DA CLASSE É O "ID" E DIZ QUE SERÁ AUTOINCREMENTADO
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
