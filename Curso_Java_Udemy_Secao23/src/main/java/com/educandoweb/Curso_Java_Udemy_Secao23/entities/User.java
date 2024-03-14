@@ -1,12 +1,15 @@
 package com.educandoweb.Curso_Java_Udemy_Secao23.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity //ESPECIFICA PARA O JPA QUE OS OBJETOS DESSA CLASSE DEVERÃO SER CONVERTIDOS PARA O MODELO RELACIONAL
@@ -22,6 +25,13 @@ public class User implements Serializable{
 	private String email;
 	private String phone;
 	private String password;
+	
+	/*
+	 * ESPECIFICA PARA O JPA QUE O RELACIONAMENTO DA CLASSE É DE UM PARA MUITOS.
+	 * E MAPEIA EM QUAL COLUNA ELA ESTÁ RELACIONADA NA CLASSE ASSOCIADA
+	 */
+	@OneToMany(mappedBy = "client")
+	private List<Order> orders = new ArrayList<>();
 	
 	public User() {
 		
@@ -74,6 +84,10 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public List<Order> getOrders() {
+		return orders;
 	}
 
 	@Override
